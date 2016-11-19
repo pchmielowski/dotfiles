@@ -105,7 +105,8 @@ alias g=git
 source /usr/share/bash-completion/completions/git
 __git_complete g __git_main
 
-alias b="cd ~/AndroidStudioProjects/Beer/; rin"
+alias _beer="cd ~/AndroidStudioProjects/Beer/; rin"
+alias _pomodoro="cd ~/AndroidStudioProjects/Pomodoro/; rin"
 function editBashRc {
   vi ~/.bashrc
   source ~/.bashrc
