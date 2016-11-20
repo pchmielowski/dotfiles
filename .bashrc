@@ -123,4 +123,4 @@ function setResolution {
   xrandr --addmode VGA1 1680x1050_60.00
 }
 
-alias d='sudo docker'
+alias docker='sudo docker'
