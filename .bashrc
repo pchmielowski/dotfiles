@@ -136,3 +136,5 @@ fi
 if [ -f /home/piotrek/Downloads/google-cloud-sdk/completion.bash.inc ]; then
   source '/home/piotrek/Downloads/google-cloud-sdk/completion.bash.inc'
 fi
+
+echo Hello!
