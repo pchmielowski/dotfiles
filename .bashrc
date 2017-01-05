@@ -72,6 +72,8 @@ fi
 # added by Anaconda3 4.0.0 installer
 export PATH="/home/piotrek/anaconda3/bin:$PATH"
 
+export PATH=$PATH:~/bin
+
 function del() {
   mv -fv -t ~/Bin "$@"
   if [ "$?" -eq "1" ]; then
