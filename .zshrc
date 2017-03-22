@@ -108,3 +108,4 @@ alias jshell='docker run --rm -it java:9 jshell'
 alias l='ls -1'
 
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+alias watch_repo='watch --color -t -d -n 1 git gr --color=always'
