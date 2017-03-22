@@ -3,3 +3,4 @@
 	st = status
     gr = log --oneline --decorate --all --graph -n 10
     ap = add --patch
+    co = checkout
