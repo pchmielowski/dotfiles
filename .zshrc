@@ -88,9 +88,11 @@ alias tree='tree -C'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# example:
-#        $ ls | map line; do echo $line; done
-alias map='while read'
+function map() {
+  while read element; do
+    eval "$1" $element
+  done
+}
 export ANDROID_HOME=/Users/chmip/Library/Android/sdk/
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 alias vim='mvim -v'
