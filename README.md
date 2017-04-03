@@ -4,4 +4,4 @@
     [ ] Merge .zshrc and .bashrc
     [ ] Remove .bashrc
     [ ] Upload hashing `del` command
-    [ ] Upload git configuration
+    [x] Upload git configuration
