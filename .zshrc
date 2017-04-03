@@ -111,3 +111,5 @@ alias l='ls -1'
 
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 alias watch_repo='watch --color -t -d -n 1 git gr --color=always'
+
+alias grep_in_rules=~/scripts/grep_in_rules.bash
