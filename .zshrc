@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# @todo Switch/case
+# @todo #1 Switch/case
 if [[ "$(uname)" == "Linux" ]]; then
   source ~/dotfiles/.linux.zshrc
 elif [[ "$(uname)" == "Darwin" ]]; then
