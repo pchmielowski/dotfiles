@@ -99,9 +99,12 @@ alias vim='mvim -v'
 alias vi='mvim -v'
 
 function del() {
-  mv -fv "$@" ~/Bin
+  BIN=~/Bin
+  mv -fv -t $BIN "$@"
   if [ "$?" -eq "1" ]; then
-      mv -fv "$@" ~/Bin/duplicates
+    DIR=`date +%d%m%y%H%M%S`
+    mkdir $BIN/$DIR
+    mv -fv -t $BIN/$DIR "$@"
   fi
 }
 
