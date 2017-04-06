@@ -122,5 +122,5 @@ alias watch_repo='watch --color -t -d -n 1 git gr --color=always'
 
 alias grep_in_rules=~/scripts/grep_in_rules.bash
 
-@todo #4 create editZshRc command
+@todo #8 create editZshRc command
 
