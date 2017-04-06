@@ -102,6 +102,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 alias vim='mvim -v'
 alias vi='mvim -v'
 
+@todo #4 macOs mv version
 function del() {
   BIN=~/Bin
   mv -fv -t $BIN "$@"
@@ -120,3 +121,6 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 alias watch_repo='watch --color -t -d -n 1 git gr --color=always'
 
 alias grep_in_rules=~/scripts/grep_in_rules.bash
+
+@todo #4 create editZshRc command
+
