@@ -1,10 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-if [ "$(uname)" == "Linux" ]; then
-  source .linux.zshrc
-else
-  source .mac.zshrc
+# @todo Switch/case
+if [[ "$(uname)" == "Linux" ]]; then
+  source ~/dotfiles/.linux.zshrc
+elif [[ "$(uname)" == "Darwin" ]]; then
+  source ~/dotfiles/.mac.zshrc
 fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
