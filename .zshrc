@@ -55,7 +55,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode tmux gradle docker)
+plugins=(vi-mode tmux gradle docker git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,7 +102,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 alias vim='mvim -v'
 alias vi='mvim -v'
 
-# @todo #4 macOs mv version
+# @todo macOs mv version
 function del() {
   BIN=~/Bin
   mv -fv -t $BIN "$@"
@@ -122,5 +122,7 @@ alias watch_repo='watch --color -t -d -n 1 git gr --color=always'
 
 alias grep_in_rules=~/scripts/grep_in_rules.bash
 
-# @todo #8 create editZshRc command
+alias rin='git status; git gr'
+
+# @todo create editZshRc command
 
