@@ -1,0 +1,8 @@
+language: bash
+
+script:
+  - bash -n .bashrc 
+  - zsh -n .zshrc
+  - zsh -n .mac.zshrc
+  - zsh -n .linux.zshrc
+
