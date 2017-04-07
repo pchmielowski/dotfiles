@@ -1,5 +1,8 @@
 language: bash
 
+before_script:
+  - sudo apt-get install -y zsh
+
 script:
   - bash -n .bashrc 
   - zsh -n .zshrc
