@@ -97,18 +97,7 @@ function colorStatus {
   git status | GREP_COLOR=$GREEN egrep 'working directory clean|$'
 }
 export -f colorStatus
-function rin() {
-  colorStatus
-  echo
-  git log --oneline --decorate --all --graph | head -10
-}
-export -f rin
-alias g=git
-source /usr/share/bash-completion/completions/git
-__git_complete g __git_main
 
-alias _beer="cd ~/AndroidStudioProjects/Beer/; rin"
-alias _pomodoro="cd ~/AndroidStudioProjects/Pomodoro/; rin"
 function editBashRc {
   vi ~/.bashrc
   source ~/.bashrc
