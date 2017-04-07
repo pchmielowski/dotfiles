@@ -102,7 +102,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 alias vim='mvim -v'
 alias vi='mvim -v'
 
-# @todo macOs mv version
+# @todo #1 macOs mv version
 function del() {
   BIN=~/Bin
   mv -fv -t $BIN "$@"
@@ -124,5 +124,5 @@ alias grep_in_rules=~/scripts/grep_in_rules.bash
 
 alias rin='git status; git gr'
 
-# @todo create editZshRc command
+# @todo # create editZshRc command
 
