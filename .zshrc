@@ -11,7 +11,7 @@ fi
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cypher"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -41,7 +41,7 @@ ZSH_THEME="cypher"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -89,18 +89,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias tree='tree -C'
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
 
 function map() {
   while read element; do
     eval "$1" $element
   done
 }
-export ANDROID_HOME=/Users/chmip/Library/Android/sdk/
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-alias vim='mvim -v'
-alias vi='mvim -v'
 
 # @todo #1 macOs mv version
 function del() {
@@ -113,16 +109,28 @@ function del() {
   fi
 }
 
-alias jshell='docker run --rm -it java:9 jshell'
 
-alias l='ls -1'
+# Colors
+export GREEN=92 
 
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+#Git
+function colorStatus {
+  git status | GREP_COLOR=$GREEN egrep 'working directory clean|$'
+}
+function rin() {
+  colorStatus
+  echo
+  git log --oneline --decorate --all --graph | head -10
+}
+
 alias watch_repo='watch --color -t -d -n 1 git gr --color=always'
-
-alias grep_in_rules=~/scripts/grep_in_rules.bash
 
 alias rin='git status; git gr'
 
 # @todo # create editZshRc command
 
+# @todo #1 check if works on Mac/Linux
+function kill8080 {
+  PID=`netstat -tulpn 2>/dev/null | grep 8080 | awk '{ print $7 }' | cut -d/ -f1`
+  kill $PID
+}
