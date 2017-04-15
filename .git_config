@@ -1,6 +1,8 @@
 # @todo rename to .gitconfig
 [alias]
   ci = commit
+  reh = reset --hard
+  fp = fetch --prune
   st = status
   gr = log --oneline --decorate --branches --graph -n 10
   ap = add --patch
