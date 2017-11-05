@@ -94,7 +94,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 function map() {
   while read element; do
-    eval "$1" $element
+    eval "$1" "$element"
   done
 }
 
@@ -134,3 +134,15 @@ function kill8080 {
   PID=`netstat -tulpn 2>/dev/null | grep 8080 | awk '{ print $7 }' | cut -d/ -f1`
   kill $PID
 }
+
+function sr {
+  xrandr --newmode "1680x1050_60.00" 146.25 1680 1784 1960 2240 1050 1053 1059 1089 -hsync +vsync
+  xrandr --addmode VGA-1 1680x1050_60.00
+  exit
+}
+
+
+# added by travis gem
+[ -f /home/piotrek/.travis/travis.sh ] && source /home/piotrek/.travis/travis.sh
+
+export PATH=~/.local/bin:$PATH
