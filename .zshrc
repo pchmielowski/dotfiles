@@ -98,14 +98,14 @@ function map() {
   done
 }
 
-# @todo #1 macOs mv version
+TRASH_DIR=~/.trash
+mkdir -p $TRASH_DIR
 function del() {
-  BIN=~/Bin
-  mv -fv -t $BIN "$@"
+  mv -fv -t $TRASH_DIR "$@"
   if [ "$?" -eq "1" ]; then
     DIR=`date +%d%m%y%H%M%S`
-    mkdir $BIN/$DIR
-    mv -fv -t $BIN/$DIR "$@"
+    mkdir $TRASH_DIR/$DIR
+    mv -fv -t $TRASH_DIR/$DIR "$@"
   fi
 }
 
