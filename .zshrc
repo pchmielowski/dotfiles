@@ -94,7 +94,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 function map() {
   while read element; do
-    eval "$1" $element
+    eval "$1" "$element"
   done
 }
 
@@ -134,7 +134,6 @@ function kill8080 {
   PID=`netstat -tulpn 2>/dev/null | grep 8080 | awk '{ print $7 }' | cut -d/ -f1`
   kill $PID
 }
-
 
 function replace_endpoint() {
 	url=$1
@@ -180,3 +179,11 @@ function reset_network_card() {
 	nmcli radio wifi off
 	nmcli radio wifi on
 }
+function sr {
+  xrandr --newmode "1680x1050_60.00" 146.25 1680 1784 1960 2240 1050 1053 1059 1089 -hsync +vsync
+  xrandr --addmode VGA-1 1680x1050_60.00
+  exit
+}
+
+
+export PATH=~/.local/bin:$PATH
