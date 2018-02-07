@@ -151,13 +151,7 @@ function replace_endpoint() {
 	fi
 }
 
-alias e_localhost='replace_endpoint http://192.168.1.177/ mobile@callpage.io Mobile123'
-alias e_home='replace_endpoint http://83.10.207.187/ mobile@callpage.io Mobile123'
-alias e_develop3='replace_endpoint https://app3.callpagedev.org/ admin@example.com Callpage123'
-alias e_staging='replace_endpoint https://app.callpagetest.org/ contact@callpage.io Callpage123'
-alias e_production='replace_endpoint https://app.callpage.io/ mobile@callpage.io Mobile123'
-alias e_emulator='replace_endpoint http://10.0.2.2/ mobile@callpage.io Mobile123'
-
+source e_scripts.zsh
 
 alias leak_canary='~/utils/leak_canary.bash'
 
