@@ -55,7 +55,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode tmux gradle docker git)
+plugins=(vi-mode tmux gradle docker git git-extras)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,4 +133,50 @@ alias rin='git status; git gr'
 function kill8080 {
   PID=`netstat -tulpn 2>/dev/null | grep 8080 | awk '{ print $7 }' | cut -d/ -f1`
   kill $PID
+}
+
+
+function replace_endpoint() {
+	url=$1
+	CallPageConstants='/home/piotrek/app-android/CallPageCRM/app/src/main/java/io/callpage/callpagecrm/services/data/CallPageConstants.java'
+	sed -i 's@\(WebApiDevelopmentBaseUrl = "\).*"@\1'$url'"@' $CallPageConstants
+
+	LoginViewModel='/home/piotrek/app-android/CallPageCRM/app/src/main/java/io/callpage/callpagecrm/screens/login/LoginViewModel.java'
+	if (($+2)); then
+		user=$2
+		sed -i '0,/setEmailText/{s/\(setEmailText("\).*"/\1'$user'"/}' $LoginViewModel
+	fi
+	if (($+3)); then
+		password=$3
+		sed -i '0,/setPasswordText/{s/\(setPasswordText("\).*"/\1'$password'"/}' $LoginViewModel
+	fi
+}
+
+alias e_localhost='replace_endpoint http://192.168.1.177/ mobile@callpage.io Mobile123'
+alias e_home='replace_endpoint http://83.10.207.187/ mobile@callpage.io Mobile123'
+alias e_develop3='replace_endpoint https://app3.callpagedev.org/ admin@example.com Callpage123'
+alias e_staging='replace_endpoint https://app.callpagetest.org/ contact@callpage.io Callpage123'
+alias e_production='replace_endpoint https://app.callpage.io/ mobile@callpage.io Mobile123'
+alias e_emulator='replace_endpoint http://10.0.2.2/ mobile@callpage.io Mobile123'
+
+
+alias leak_canary='~/utils/leak_canary.bash'
+
+alias cd_res='cd /home/piotrek/app-android/CallPageCRM/app/src/main/res'
+
+function check_conflicts() {
+	BRANCH=$1
+	git merge --no-commit --no-ff $BRANCH 
+	git diff --diff-filter=U | less
+}
+
+alias cs='check_conflicts statistics'
+
+function kill_gradle_daemon() {
+  kill -9 `ps x | grep GradleDaemon | grep -v grep | cut -f1 -d' '`
+}
+
+function reset_network_card() {
+	nmcli radio wifi off
+	nmcli radio wifi on
 }

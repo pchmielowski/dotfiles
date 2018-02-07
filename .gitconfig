@@ -1,12 +1,19 @@
-# @todo rename to .gitconfig
 [alias]
   ci = commit
+  cia = commit --amend
   reh = reset --hard
   fp = fetch --prune
   st = status
-  gr = log --oneline --decorate --branches --graph -n 10
+  gr = log --oneline --decorate --branches --graph -n 20
+  gra = log --oneline --decorate --all --graph
   ap = add --patch
   co = checkout
+  cob = checkout -b
+  cop = checkout -p
+  pp = pull --prune
+  bd = branch -d
+  bm = branch --merged 
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
 [color]
   ui = always
 [core]
