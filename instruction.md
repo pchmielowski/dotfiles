@@ -1,4 +1,4 @@
-`sudo apt-get install zsh curl tree vim`
+`sudo apt-get install zsh curl tree vim ruby ruby-dev`
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
