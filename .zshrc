@@ -151,7 +151,7 @@ function replace_endpoint() {
 	fi
 }
 
-source e_scripts.zsh
+source dotfiles/e_scripts.zsh
 
 alias leak_canary='~/utils/leak_canary.bash'
 
