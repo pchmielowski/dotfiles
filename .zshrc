@@ -179,5 +179,9 @@ function sr {
   exit
 }
 
+# TODO: ps x | grep studio.sh | grep -v grep | cut -f1 -d' '
+
+alias grant='adb shell pm grant io.callpage.crm android.permission.READ_PHONE_STATE'
+alias revoke='adb shell pm revoke io.callpage.crm android.permission.READ_PHONE_STATE'
 
 export PATH=~/.local/bin:$PATH
