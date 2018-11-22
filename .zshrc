@@ -55,7 +55,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode tmux gradle docker git git-extras)
+plugins=(git git-extras)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -135,27 +135,9 @@ function kill8080 {
   kill $PID
 }
 
-function replace_endpoint() {
-	url=$1
-	CallPageConstants='/home/piotrek/app-android/CallPageCRM/app/src/main/java/io/callpage/callpagecrm/services/data/CallPageConstants.java'
-	sed -i 's@\(WebApiDevelopmentBaseUrl = "\).*"@\1'$url'"@' $CallPageConstants
-
-	LoginViewModel='/home/piotrek/app-android/CallPageCRM/app/src/main/java/io/callpage/callpagecrm/screens/login/LoginViewModel.java'
-	if (($+2)); then
-		user=$2
-		sed -i '0,/setEmailText/{s/\(setEmailText("\).*"/\1'$user'"/}' $LoginViewModel
-	fi
-	if (($+3)); then
-		password=$3
-		sed -i '0,/setPasswordText/{s/\(setPasswordText("\).*"/\1'$password'"/}' $LoginViewModel
-	fi
-}
-
 source dotfiles/e_scripts.zsh
 
 alias leak_canary='~/utils/leak_canary.bash'
-
-alias cd_res='cd /home/piotrek/app-android/CallPageCRM/app/src/main/res'
 
 function check_conflicts() {
 	BRANCH=$1
