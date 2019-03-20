@@ -1,4 +1,4 @@
-`sudo apt-get install zsh curl tree vim htop`
+`sudo apt-get install zsh curl tree vim htop android-tools-adb`
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
