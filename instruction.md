@@ -1,6 +1,6 @@
 ```
 sudo apt-get update
-sudo apt-get install zsh curl tree vim htop unzip
+sudo apt-get install zsh curl tree vim htop unzip git
 ```
 
 ```
