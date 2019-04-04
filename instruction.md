@@ -1,6 +1,6 @@
 ```
 sudo apt-get update
-sudo apt-get install zsh curl tree vim htop unzip git
+sudo apt-get install zsh curl tree vim htop unzip git python-pip
 
 git clone git@github.com:pchmielowski/dotfiles.git
 
