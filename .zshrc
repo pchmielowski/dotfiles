@@ -135,7 +135,6 @@ function kill8080 {
   kill $PID
 }
 
-source dotfiles/e_scripts.zsh
 
 alias leak_canary='~/utils/leak_canary.bash'
 
