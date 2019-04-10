@@ -1,4 +1,5 @@
-```
+#!/bin/bash
+
 sudo apt-get update
 sudo apt-get install zsh curl tree vim htop unzip git python3-pip net-tools
 
@@ -8,12 +9,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 rm .zshrc
 ln -s dotfiles/.zshrc
 mkdir ~/.trash
-```
 
-add following to ~/.gitconfig:
-
-```
-[include]
-        path = dotfiles/.gitconfig
-```
-
+echo '[include]'                       >> ~/.gitconfig
+echo '    path = dotfiles/.gitconfig'  >> ~/.gitconfig
