@@ -127,8 +127,6 @@ alias watch_repo='watch --color -t -d -n 1 git gr --color=always'
 
 alias rin='git status; git gr'
 
-# @todo # create editZshRc command
-
 # @todo #1 check if works on Mac/Linux
 function kill8080 {
   PID=`netstat -tulpn 2>/dev/null | grep 8080 | awk '{ print $7 }' | cut -d/ -f1`
