@@ -6,6 +6,5 @@ before_script:
 script:
   - bash -n .bashrc 
   - zsh -n .zshrc
-  - zsh -n .mac.zshrc
   - zsh -n .linux.zshrc
 
