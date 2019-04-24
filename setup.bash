@@ -11,5 +11,4 @@ rm .zshrc
 ln -s dotfiles/.zshrc
 mkdir ~/.trash
 
-echo '[include]'                       >> ~/.gitconfig
-echo '    path = dotfiles/.gitconfig'  >> ~/.gitconfig
+# TODO: Populate ~/.gitconfig with .gitconfig.example
