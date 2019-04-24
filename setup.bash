@@ -1,7 +1,8 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get install zsh curl tree vim htop unzip git python3-pip net-tools
+sudo apt-get install zsh curl tree vim htop unzip git net-tools
+# sudo apt-get install python3-pip npm # Additional.
 
 git clone git@github.com:pchmielowski/dotfiles.git
 
