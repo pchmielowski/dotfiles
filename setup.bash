@@ -2,7 +2,7 @@
 
 sudo apt-get update
 sudo apt-get install zsh curl tree vim htop unzip git net-tools
-# sudo apt-get install python3-pip npm # Additional.
+# sudo apt-get install python3-pip npm gradle # Additional.
 
 git clone git@github.com:pchmielowski/dotfiles.git
 
