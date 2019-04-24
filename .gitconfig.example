@@ -1,0 +1,7 @@
+[include]
+        path = dotfiles/.gitconfig
+
+[user]
+        email = piotr.a.chmielowski@gmail.com
+        name = Piotr Chmielowski
+
